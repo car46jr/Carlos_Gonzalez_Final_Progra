@@ -48,7 +48,7 @@ User usuario;
             }else{
                 request.setAttribute("success", 0);
                 request.setAttribute("mensaje", "Usuario y/o contraseña no encontrado");
-                request.getRequestDispatcher("/index.jsp").forward(request, response);
+                request.getRequestDispatcher("/index.html").forward(request, response);
             }            
         }
     }
