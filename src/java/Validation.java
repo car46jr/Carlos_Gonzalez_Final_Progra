@@ -42,8 +42,8 @@ User usuario;
             
             String usuarioConsultado= usuario.validarUsuario(request.getParameter("nombre_usuario"), request.getParameter("contrasenia"));
             if(usuarioConsultado.equals(request.getParameter("nombre_usuario"))){
-               request.getSession().setAttribute("user", request.getParameter("nombre_usuario"));
-                request.getSession().setAttribute("pass", request.getParameter("contrasenia"));
+               request.getSession().setAttribute("nombre_usuario", request.getParameter("nombre_usuario"));
+                request.getSession().setAttribute("contrasenia", request.getParameter("contrasenia"));
                 response.sendRedirect(request.getContextPath()+"/StudentController");              
             }else{
                 request.setAttribute("success", 0);
