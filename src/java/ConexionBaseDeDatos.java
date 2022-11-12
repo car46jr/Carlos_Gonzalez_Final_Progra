@@ -10,10 +10,10 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Hatziry Chacón
+ * @author Carlo G
  */
 public class ConexionBaseDeDatos {
-    private String url="jdbc:mysql://localhost:3306/universidad";//url de MySQL
+    private String url="jdbc:mysql://localhost:3306/final_progra";//url de MySQL
     private String usuario="root";// usuario de mysql local
     private String clave="root"; 
     private Connection conexion=null;  
@@ -21,7 +21,7 @@ public class ConexionBaseDeDatos {
     public Connection conectar(){   
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            conexion=DriverManager.getConnection( url, usuario,clave);
+            conexion=DriverManager.getConnection( url,usuario,clave);
         }  catch (SQLException ex) {
             ex.printStackTrace();
         } catch (ClassNotFoundException ex) {   

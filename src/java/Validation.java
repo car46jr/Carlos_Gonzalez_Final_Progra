@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author yoXD
+ * @author Carlos G
  */
 @WebServlet(urlPatterns = {"/Validation"})
 public class Validation extends HttpServlet {
@@ -40,10 +40,10 @@ User usuario;
                 request.getRequestDispatcher("/index.jsp").forward(request, response);
             }
             
-            String usuarioConsultado= usuario.validarUsuario(request.getParameter("user"), request.getParameter("pass"));
-            if(usuarioConsultado.equals(request.getParameter("user"))){
-               request.getSession().setAttribute("user", request.getParameter("user"));
-                request.getSession().setAttribute("pass", request.getParameter("pass"));
+            String usuarioConsultado= usuario.validarUsuario(request.getParameter("nombre_usuario"), request.getParameter("contrasenia"));
+            if(usuarioConsultado.equals(request.getParameter("nombre_usuario"))){
+               request.getSession().setAttribute("user", request.getParameter("nombre_usuario"));
+                request.getSession().setAttribute("pass", request.getParameter("contrasenia"));
                 response.sendRedirect(request.getContextPath()+"/StudentController");              
             }else{
                 request.setAttribute("success", 0);

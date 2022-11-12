@@ -10,7 +10,7 @@ import java.sql.SQLException;
  */
 /**
  *
- * @author Hatziry Chacón
+ * @author Carlos G
  */
 public class User {
 
@@ -32,7 +32,7 @@ public class User {
             if (result != null) {
                 String usuarioEncontrado = "";
                 while (result.next()) {
-                    usuarioEncontrado = result.getString("usuario");
+                    usuarioEncontrado = result.getString("nombre_usuario");
                 }
                 return usuarioEncontrado;
             }
